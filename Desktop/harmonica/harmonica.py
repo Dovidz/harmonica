@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: T201
 """Harmonica Chord-to-Tab CLI for a standard 10-hole diatonic in key of C."""
 
 CHORDS = {
@@ -21,7 +22,7 @@ CHORDS = {
 }
 
 
-def process_chords(chords):
+def process_chords(chords: list[str]) -> None:
     """Look up a list of chord names and print their tabs."""
     for chord in chords:
         entry = CHORDS.get(chord.lower())
@@ -33,7 +34,8 @@ def process_chords(chords):
     print()
 
 
-def main():
+def main() -> None:
+    """Run the interactive harmonica chord-to-tab CLI."""
     print("=== Harmonica Chord-to-Tab (Key of C) ===")
     print("Enter chords separated by spaces, across multiple lines.")
     print("Type 'go' to look them up, 'list' for all chords, or 'q' to quit.\n")
